@@ -16,7 +16,10 @@ public class KafkaConsumer<TEvent extends IntegrationEvent> implements EventBusC
 
     private EventHandler<IntegrationEvent> eventHandler;
 
-    @KafkaListener(topics = "#{@eventLs}", groupId = "#{@eventGroupId}")
+    @KafkaListener(
+            topics = "#{T(io.github.minan65.corepackage.abstractions.events.Event).topicName()}",
+            groupId = "#{T(io.github.minan65.corepackage.abstractions.events.Event).groupId()}"
+    )
     public  <TEvent extends IntegrationEvent> void consume(TEvent event) {
 
         LOGGER.info(String.format("%s received => %s", event.getClass().getSimpleName(), event.toString()));
