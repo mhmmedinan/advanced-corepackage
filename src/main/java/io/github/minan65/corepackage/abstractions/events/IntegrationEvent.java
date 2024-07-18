@@ -12,8 +12,4 @@ public abstract class IntegrationEvent extends Event {
         this.correlationId = correlationId;
     }
 
-    @Override
-    public String getGroupId() {
-        return "default";
-    }
 }

@@ -32,7 +32,7 @@ public class KafkaMessageConsumer implements EventBusSubscriber {
     @Override
     public <TEvent extends IntegrationEvent> void subscribe(TEvent event, EventBusConsumer<TEvent> consumer) {
         Map<String, Object> consumerProps = new HashMap<>(consumerFactory.getConfigurationProperties());
-        consumerProps.put(ConsumerConfig.GROUP_ID_CONFIG, event.getGroupId());
+        consumerProps.put(ConsumerConfig.GROUP_ID_CONFIG, event.getTopicName() + ".group");
         KafkaConsumer<String, IntegrationEvent> kafkaConsumer = new KafkaConsumer<>(consumerProps);
         kafkaConsumer.subscribe(Collections.singletonList(event.getTopicName()));
         new Thread(() -> {

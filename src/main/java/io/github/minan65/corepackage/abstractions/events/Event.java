@@ -38,7 +38,6 @@ public abstract class Event {
     }
 
     public abstract String getTopicName();
-    public abstract String getGroupId();
 
 
 }
