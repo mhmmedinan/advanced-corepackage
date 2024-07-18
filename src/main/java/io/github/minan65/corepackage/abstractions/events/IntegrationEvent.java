@@ -11,4 +11,9 @@ public abstract class IntegrationEvent extends Event {
     protected void setCorrelationId(String correlationId) {
         this.correlationId = correlationId;
     }
+
+    @Override
+    public String getGroupId() {
+        return "default";
+    }
 }

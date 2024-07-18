@@ -1,7 +1,11 @@
 package io.github.minan65.corepackage.abstractions.events;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import java.time.OffsetDateTime;
 import java.util.UUID;
+
 
 public abstract class Event {
     private final UUID eventId = UUID.randomUUID();
@@ -33,6 +37,8 @@ public abstract class Event {
         return getClass().getName();
     }
 
-    public abstract String topicName();
-    public abstract String groupId();
+    public abstract String getTopicName();
+    public abstract String getGroupId();
+
+
 }

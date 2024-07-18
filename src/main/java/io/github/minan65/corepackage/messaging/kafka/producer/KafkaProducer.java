@@ -19,11 +19,12 @@ public class KafkaProducer implements EventBusProducer {
     private final KafkaTemplate<String,IntegrationEvent> kafkaTemplate;
     private static final Logger LOGGER = LoggerFactory.getLogger(KafkaProducer.class);
 
+
     @Override
     public <TEvent extends IntegrationEvent> void produce(TEvent event) {
         LOGGER.info(String.format("%s created => %s", event.getClass().getSimpleName(), event.toString()));
         Message<TEvent> message = MessageBuilder.withPayload(event)
-                .setHeader(KafkaHeaders.TOPIC,event.topicName())
+                .setHeader(KafkaHeaders.TOPIC,event.getTopicName())
                         .build();
         kafkaTemplate.send(message);
     }
