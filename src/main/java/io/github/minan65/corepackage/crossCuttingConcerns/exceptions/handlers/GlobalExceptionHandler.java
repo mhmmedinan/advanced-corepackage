@@ -80,6 +80,13 @@ public class GlobalExceptionHandler {
         return problemDetails;
     }
 
+    @ExceptionHandler({Exception.class}) //catch
+    public EventCreationProblemDetails handleEventCreationException(Exception exception) {
+        EventCreationProblemDetails problemDetails = new EventCreationProblemDetails();
+        problemDetails.setDetail(exception.getMessage());
+        return problemDetails;
+    }
+
     @ExceptionHandler({MethodArgumentNotValidException.class})
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ValidationProblemDetails handleValidationException(MethodArgumentNotValidException exception) {
