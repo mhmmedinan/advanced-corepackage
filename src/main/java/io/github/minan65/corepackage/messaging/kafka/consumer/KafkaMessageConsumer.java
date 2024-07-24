@@ -5,6 +5,7 @@ import io.github.minan65.corepackage.abstractions.messaging.transport.EventBusCo
 import io.github.minan65.corepackage.abstractions.messaging.transport.EventBusSubscriber;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
+import org.apache.kafka.common.errors.WakeupException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
@@ -32,11 +33,19 @@ public class KafkaMessageConsumer implements EventBusSubscriber {
         KafkaConsumer<String, Event> kafkaConsumer = new KafkaConsumer<>(consumerProps);
         kafkaConsumer.subscribe(Collections.singletonList(event.getTopicName()));
         new Thread(() -> {
-            while (true) {
-                kafkaConsumer.poll(Duration.ofMillis(100)).forEach(record -> {
-                    LOGGER.info("Consumed event: {}", record.value());
-                    consumer.consume((TEvent) record.value());
-                });
+            try {
+                while (true) {
+                    kafkaConsumer.poll(Duration.ofMillis(100)).forEach(record -> {
+                        LOGGER.info("Consumed event: {}", record.value());
+                        consumer.consume((TEvent) record.value());
+                    });
+                }
+            } catch (WakeupException e)
+            {
+                LOGGER.info("Consumer wakeup exception: {}", e.getMessage());
+            }
+            finally {
+                kafkaConsumer.close();
             }
         }).start();
     }
