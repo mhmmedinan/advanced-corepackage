@@ -1,8 +1,8 @@
 package io.github.minan65.corepackage.abstractions.messaging.transport;
 
-import io.github.minan65.corepackage.abstractions.events.IntegrationEvent;
+import io.github.minan65.corepackage.abstractions.events.Event;
 
-public abstract class BaseConsumer<TEvent extends IntegrationEvent> implements EventBusConsumer<TEvent>  {
+public abstract class BaseConsumer<TEvent extends Event> implements EventBusConsumer<TEvent>  {
 
     private final EventBusSubscriber eventBusSubscriber;
     private final Class<? extends TEvent> classType;

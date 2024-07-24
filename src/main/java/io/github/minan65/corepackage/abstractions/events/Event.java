@@ -1,17 +1,19 @@
 package io.github.minan65.corepackage.abstractions.events;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
 
 public abstract class Event {
-    private final UUID eventId = UUID.randomUUID();
-    private long eventVersion = -1;
-    private final OffsetDateTime occurredOn = OffsetDateTime.now();
-    private final OffsetDateTime timeStamp = OffsetDateTime.now();
+    private final UUID eventId;
+    private long eventVersion;
+    private final OffsetDateTime occurredOn;
+
+    public Event(){
+        this.eventId=UUID.randomUUID();
+        this.eventVersion=-1;
+        this.occurredOn=OffsetDateTime.now();
+    }
 
     public UUID getEventId() {
         return eventId;
@@ -27,10 +29,6 @@ public abstract class Event {
 
     public OffsetDateTime getOccurredOn() {
         return occurredOn;
-    }
-
-    public OffsetDateTime getTimeStamp() {
-        return timeStamp;
     }
 
     public String getEventType() {

@@ -1,14 +1,20 @@
 package io.github.minan65.corepackage.abstractions.events;
 
+import java.util.UUID;
+
 public abstract class IntegrationEvent extends Event {
 
-    private String correlationId;
+    private UUID correlationId;
 
-    public String getCorrelationId() {
+    public IntegrationEvent(){
+        this.correlationId=UUID.randomUUID();
+    }
+
+    public UUID getCorrelationId() {
         return correlationId;
     }
 
-    protected void setCorrelationId(String correlationId) {
+    protected void setCorrelationId(UUID correlationId) {
         this.correlationId = correlationId;
     }
 

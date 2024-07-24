@@ -1,13 +1,9 @@
 package io.github.minan65.corepackage.messaging.kafka.consumer;
 
-import io.github.minan65.corepackage.abstractions.events.IntegrationEvent;
+import io.github.minan65.corepackage.abstractions.events.Event;
 import io.github.minan65.corepackage.abstractions.messaging.transport.EventBusConsumer;
 import io.github.minan65.corepackage.abstractions.messaging.transport.EventBusSubscriber;
-import jakarta.annotation.PostConstruct;
-import lombok.AllArgsConstructor;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
-import org.apache.kafka.clients.consumer.ConsumerRecord;
-import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,17 +19,17 @@ import java.util.Map;
 public class KafkaMessageConsumer implements EventBusSubscriber {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(KafkaMessageConsumer.class);
-    private final DefaultKafkaConsumerFactory<String, IntegrationEvent> consumerFactory;
+    private final DefaultKafkaConsumerFactory<String, Event> consumerFactory;
 
-    public KafkaMessageConsumer(DefaultKafkaConsumerFactory<String, IntegrationEvent> consumerFactory) {
+    public KafkaMessageConsumer(DefaultKafkaConsumerFactory<String, Event> consumerFactory) {
         this.consumerFactory = consumerFactory;
     }
 
     @Override
-    public <TEvent extends IntegrationEvent> void subscribe(TEvent event, EventBusConsumer<TEvent> consumer) {
+    public <TEvent extends Event> void subscribe(TEvent event, EventBusConsumer<TEvent> consumer) {
         Map<String, Object> consumerProps = new HashMap<>(consumerFactory.getConfigurationProperties());
         consumerProps.put(ConsumerConfig.GROUP_ID_CONFIG, event.getTopicName() + ".group");
-        KafkaConsumer<String, IntegrationEvent> kafkaConsumer = new KafkaConsumer<>(consumerProps);
+        KafkaConsumer<String, Event> kafkaConsumer = new KafkaConsumer<>(consumerProps);
         kafkaConsumer.subscribe(Collections.singletonList(event.getTopicName()));
         new Thread(() -> {
             while (true) {
