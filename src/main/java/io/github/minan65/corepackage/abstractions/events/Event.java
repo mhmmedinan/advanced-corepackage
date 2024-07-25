@@ -4,10 +4,11 @@ import java.time.OffsetDateTime;
 import java.util.UUID;
 
 
-public abstract class Event {
+public class Event {
     private final UUID eventId;
     private long eventVersion;
     private final OffsetDateTime occurredOn;
+    private String topicName;
 
     public Event(){
         this.eventId=UUID.randomUUID();
@@ -35,7 +36,12 @@ public abstract class Event {
         return getClass().getSimpleName();
     }
 
-    public abstract String getTopicName();
 
+    public String getTopicName() {
+        return topicName;
+    }
 
+    public void setTopicName(String topicName) {
+        this.topicName = topicName;
+    }
 }

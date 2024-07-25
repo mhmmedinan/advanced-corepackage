@@ -3,6 +3,7 @@ package io.github.minan65.corepackage;
 import io.github.minan65.corepackage.abstractions.events.IntegrationEvent;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication(scanBasePackages = "io.github.minan65.corepackage")
 public class CorePackageApplication {
