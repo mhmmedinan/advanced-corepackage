@@ -1,4 +1,4 @@
-package io.github.minan65.corepackage.messaging.kafka.consumer;
+package io.github.minan65.corepackage.messaging.transport.kafka.consumer;
 
 import io.github.minan65.corepackage.abstractions.events.Event;
 import io.github.minan65.corepackage.abstractions.messaging.transport.EventBusConsumer;

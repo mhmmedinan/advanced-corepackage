@@ -1,4 +1,4 @@
-package io.github.minan65.corepackage.messaging.kafka.producer;
+package io.github.minan65.corepackage.messaging.transport.kafka.producer;
 
 
 import io.github.minan65.corepackage.abstractions.events.Event;

@@ -32,7 +32,7 @@ public abstract class Event {
     }
 
     public String getEventType() {
-        return getClass().getName();
+        return getClass().getSimpleName();
     }
 
     public abstract String getTopicName();
