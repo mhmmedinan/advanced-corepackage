@@ -7,13 +7,11 @@ import java.util.UUID;
 public class Event {
     private final UUID eventId;
     private long eventVersion;
-    private final OffsetDateTime occurredOn;
     private String topicName;
 
     public Event(){
         this.eventId=UUID.randomUUID();
         this.eventVersion=-1;
-        this.occurredOn=OffsetDateTime.now();
     }
 
     public UUID getEventId() {
@@ -28,9 +26,6 @@ public class Event {
         this.eventVersion = eventVersion;
     }
 
-    public OffsetDateTime getOccurredOn() {
-        return occurredOn;
-    }
 
     public String getEventType() {
         return getClass().getSimpleName();
