@@ -1,7 +1,7 @@
 package io.github.minan65.corepackage.crossCuttingConcerns.exceptions.types;
 
-public class UnauthorizedException extends Exception {
-    public UnauthorizedException(String message) {
+public class AuthenticationException extends Exception {
+    public AuthenticationException(String message) {
         super(message);
     }
 }

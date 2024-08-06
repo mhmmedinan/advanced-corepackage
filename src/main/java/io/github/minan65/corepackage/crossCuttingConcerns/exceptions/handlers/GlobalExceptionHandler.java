@@ -40,10 +40,10 @@ public class GlobalExceptionHandler {
         return problemDetails;
     }
 
-    @ExceptionHandler({ForbiddenException.class}) //catch
+    @ExceptionHandler({AuthorizationException.class}) //catch
     @ResponseStatus(HttpStatus.FORBIDDEN)
-    public ForbiddenProblemDetails handleForbiddenException(ForbiddenException exception) {
-        ForbiddenProblemDetails problemDetails = new ForbiddenProblemDetails();
+    public AuthorizationProblemDetails handleForbiddenException(AuthorizationException exception) {
+        AuthorizationProblemDetails problemDetails = new AuthorizationProblemDetails();
         problemDetails.setDetail(exception.getMessage());
         return problemDetails;
     }
@@ -72,10 +72,10 @@ public class GlobalExceptionHandler {
         return problemDetails;
     }
 
-    @ExceptionHandler({UnauthorizedException.class}) //catch
+    @ExceptionHandler({AuthenticationException.class}) //catch
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
-    public UnauthorizedProblemDetails handleUnauthorizedException(UnauthorizedException exception) {
-        UnauthorizedProblemDetails problemDetails = new UnauthorizedProblemDetails();
+    public AuthenticationProblemDetails handleUnauthorizedException(AuthenticationException exception) {
+        AuthenticationProblemDetails problemDetails = new AuthenticationProblemDetails();
         problemDetails.setDetail(exception.getMessage());
         return problemDetails;
     }
