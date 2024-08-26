@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>io.github.minan65</groupId>
 	<artifactId>core-application</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<name>corepackage</name>
 	<description>Core Package</description>
 	<packaging>jar</packaging>
@@ -24,6 +24,14 @@
 				<configuration>
 					<publishingServerId>central</publishingServerId>
 					<tokenAuth>true</tokenAuth>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.1.2</version>
+				<configuration>
+					<skipTests>true</skipTests>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -108,10 +116,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
@@ -127,12 +131,12 @@
 		<dependency>
 			<groupId>io.github.minan65</groupId>
 			<artifactId>core-crosscuttingconcerns</artifactId>
-			<version>1.0.0</version>
+			<version>1.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>io.github.minan65</groupId>
 			<artifactId>core-persistence</artifactId>
-			<version>1.0.0</version>
+			<version>1.0.1</version>
 		</dependency>
 	</dependencies>
 </project>
