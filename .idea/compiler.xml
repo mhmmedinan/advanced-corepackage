@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="core-localization" />
+        <module name="core-persistence" />
+        <module name="core-security" />
+        <module name="core-abstractions" />
+        <module name="core-messaging-transport-kafka" />
+        <module name="core-application" />
+        <module name="core-crosscuttingconcerns" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="core-abstractions" options="-parameters" />
+      <module name="core-application" options="-parameters" />
+      <module name="core-crosscuttingconcerns" options="-parameters" />
+      <module name="core-localization" options="-parameters" />
+      <module name="core-messaging-transport-kafka" options="-parameters" />
+      <module name="core-persistence" options="-parameters" />
+      <module name="core-security" options="-parameters" />
+    </option>
+  </component>
+</project>
