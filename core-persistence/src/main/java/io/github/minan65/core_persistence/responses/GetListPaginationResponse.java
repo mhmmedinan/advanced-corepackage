@@ -1,4 +1,4 @@
-package io.github.minan65.core_application.responses;
+package io.github.minan65.core_persistence.responses;
 
 
 import io.github.minan65.core_persistence.paging.BasePageableModel;

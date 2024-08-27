@@ -1,4 +1,4 @@
-package io.github.minan65.core_application.configuration;
+package io.github.minan65.core_persistence.configuration;
 
 import an.awesome.pipelinr.*;
 import org.springframework.beans.factory.ObjectProvider;

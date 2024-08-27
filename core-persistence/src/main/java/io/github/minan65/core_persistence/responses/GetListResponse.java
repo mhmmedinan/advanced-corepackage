@@ -1,4 +1,4 @@
-package io.github.minan65.core_application.responses;
+package io.github.minan65.core_persistence.responses;
 
 import java.util.ArrayList;
 import java.util.List;
