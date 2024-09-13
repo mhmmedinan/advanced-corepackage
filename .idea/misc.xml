@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/core-messaging-transport-kafka/pom.xml" />
         <option value="$PROJECT_DIR$/core-persistence/pom.xml" />
         <option value="$PROJECT_DIR$/core-security/pom.xml" />
+        <option value="$PROJECT_DIR$/core-mailing/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/core-application/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/core-crosscuttingconcerns/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/core-localization/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core-mailing/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/core-messaging-transport-kafka/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/core-persistence/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/core-security/src/main/java" charset="UTF-8" />

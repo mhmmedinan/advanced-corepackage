@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="core-localization" />
         <module name="core-persistence" />
+        <module name="core-mailing" />
         <module name="core-security" />
         <module name="core-abstractions" />
         <module name="core-messaging-transport-kafka" />
@@ -22,6 +23,7 @@
       <module name="core-application" options="-parameters" />
       <module name="core-crosscuttingconcerns" options="-parameters" />
       <module name="core-localization" options="-parameters" />
+      <module name="core-mailing" options="-parameters" />
       <module name="core-messaging-transport-kafka" options="-parameters" />
       <module name="core-persistence" options="-parameters" />
       <module name="core-security" options="-parameters" />
