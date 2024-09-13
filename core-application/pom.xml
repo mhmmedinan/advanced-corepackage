@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>io.github.minan65</groupId>
 	<artifactId>core-application</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.9</version>
 	<name>corepackage</name>
 	<description>Core Package</description>
 	<packaging>jar</packaging>
@@ -132,6 +132,11 @@
 			<groupId>io.github.minan65</groupId>
 			<artifactId>core-crosscuttingconcerns</artifactId>
 			<version>1.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>io.github.minan65</groupId>
+			<artifactId>core-abstractions</artifactId>
+			<version>1.0.5</version>
 		</dependency>
 	</dependencies>
 </project>
